@@ -1,5 +1,7 @@
 # Sentinel-1 时序相干 + 极化特征 GPR 反演潮滩沉积物粒度（含预测不确定性）
 
+**已上线：https://dingdjfjs-star.github.io/s1-grain-size-gpr/ · 仓库：https://github.com/dingdjfjs-star/s1-grain-size-gpr**（index.html 图库落地页 + .nojekyll；`E:\Ana\python.exe tools\prepare_deploy.py` 生成部署拷贝到 `../s1-grain-size-gpr-site/` 后走 github-pages-deploy 技能 API 通道重发）
+
 黄河三角洲 — 莱州湾潮滩 | Sentinel-1 GRD 预处理 → VV/VH/Pauli/时序相干/入射角/TWI →
 高斯过程回归（均值 + 逐点后验 std）∥ XGBoost 对照 | 中科院考研复试作品集项目
 
