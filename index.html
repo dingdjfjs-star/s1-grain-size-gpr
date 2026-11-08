@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentinel-1 时序相干+极化特征反演潮滩沉积物粒度 · GPR 不确定性量化</title>
+<style>
+  :root{
+    --paper:#faf7f0; --ink:#2b2b2b; --red:#c23b22; --blue:#4a6fa5;
+    --green:#2e6e3a; --gold:#b8860b; --line:#d8d2c4; --soft:#6b6455;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    line-height:1.75; font-size:15.5px;
+  }
+  .wrap{max-width:1060px; margin:0 auto; padding:0 20px 80px}
+  header{border-bottom:3px double var(--ink); padding:56px 0 30px; margin-bottom:34px}
+  .kicker{letter-spacing:.35em; font-size:12px; color:var(--red); font-weight:700}
+  h1{font-size:33px; line-height:1.3; margin:10px 0 6px; font-weight:800}
+  .sub{color:var(--soft); font-size:15px}
+  .badges{margin-top:16px}
+  .badge{
+    display:inline-block; border:1px solid var(--ink); border-radius:3px;
+    padding:2px 10px; margin:3px 6px 3px 0; font-size:12.5px; background:#fff;
+  }
+  .badge.b{border-color:var(--blue); color:var(--blue)}
+  .badge.r{border-color:var(--red); color:var(--red)}
+  .badge.g{border-color:var(--green); color:var(--green)}
+  .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:34px 0 10px}
+  .stat{
+    background:#fff; border:1px solid var(--line); border-top:3px solid var(--red);
+    padding:16px 18px; text-align:center;
+  }
+  .stat:nth-child(2){border-top-color:var(--blue)}
+  .stat:nth-child(3){border-top-color:var(--green)}
+  .stat:nth-child(4){border-top-color:var(--gold)}
+  .stat .n{font-size:28px; font-weight:800; letter-spacing:.02em}
+  .stat .t{font-size:12.5px; color:var(--soft); margin-top:2px}
+  h2{
+    font-size:21px; margin:52px 0 16px; padding-left:12px;
+    border-left:5px solid var(--red); font-weight:800;
+  }
+  h3{font-size:16.5px; margin:20px 0 8px}
+  p{margin:8px 0}
+  .flow{display:flex; flex-wrap:wrap; gap:6px; align-items:stretch; margin:18px 0}
+  .step{
+    background:#fff; border:1px solid var(--ink); padding:9px 13px; font-size:13px;
+    display:flex; flex-direction:column; justify-content:center; flex:1 1 0; min-width:118px;
+  }
+  .step b{font-size:13.5px}
+  .step span{color:var(--soft); font-size:11.5px}
+  .arrow{align-self:center; color:var(--red); font-weight:800; font-size:16px}
+  .star{color:var(--red); font-weight:700}
+  figure{
+    background:#fff; border:1px solid var(--line); margin:22px 0; padding:16px 16px 12px;
+  }
+  figure img{width:100%; display:block; border:1px solid var(--line)}
+  figcaption{font-size:13px; color:var(--soft); margin-top:10px}
+  figcaption b{color:var(--ink)}
+  table{width:100%; border-collapse:collapse; background:#fff; font-size:14px; margin:14px 0}
+  th,td{border:1px solid var(--line); padding:8px 12px; text-align:left}
+  th{background:#f1ecdf; font-weight:700}
+  td.num{text-align:right; font-variant-numeric:tabular-nums}
+  tr.hl td{background:#fdf3e7; font-weight:700}
+  .note{
+    background:#fdf6e9; border:1px solid var(--gold); padding:14px 18px;
+    font-size:14px; margin:16px 0;
+  }
+  .note b{color:var(--gold)}
+  code{
+    font-family:Consolas,"Courier New",monospace; font-size:13px;
+    background:#f1ecdf; padding:1px 6px; border-radius:3px;
+  }
+  ul{margin:8px 0 8px 22px}
+  li{margin:5px 0}
+  .cta{margin-top:26px}
+  .btn{
+    display:inline-block; background:var(--ink); color:var(--paper); text-decoration:none;
+    padding:10px 22px; font-size:14px; margin:4px 10px 4px 0; border-radius:3px;
+  }
+  .btn.ghost{background:transparent; color:var(--ink); border:1px solid var(--ink)}
+  footer{
+    border-top:1px solid var(--line); margin-top:60px; padding-top:18px;
+    font-size:12.5px; color:var(--soft);
+  }
+  @media (max-width:760px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    h1{font-size:25px}
+    .flow{flex-direction:column}
+    .arrow{transform:rotate(90deg); align-self:center}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">遥感作品集 · REMOTE SENSING PORTFOLIO</div>
+  <h1>Sentinel-1 时序相干 + 极化特征反演潮滩沉积物粒度</h1>
+  <div class="sub">高斯过程回归（均值 + 逐点预测不确定性） · 黄河三角洲—莱州湾潮滩 · XGBoost 对照 · GRD 预处理链全自实现</div>
+  <div class="badges">
+    <span class="badge">Python 3.13</span>
+    <span class="badge">scikit-learn GPR</span>
+    <span class="badge">xgboost 3.4</span>
+    <span class="badge b">Lee Sigma 滤波自实现 · 不调 SNAP</span>
+    <span class="badge g">时序相干 105 景对自估</span>
+    <span class="badge r">带真值评估 · seed=20261104 逐位复现</span>
+    <span class="badge">23 项自动化测试全绿</span>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">0.9109</div><div class="t">GPR 反演 D50 test R²</div></div>
+  <div class="stat"><div class="n">8.74 μm</div><div class="t">RMSE（XGBoost 对照 10.38）</div></div>
+  <div class="stat"><div class="n">93.3%</div><div class="t">95% 置信区间覆盖率</div></div>
+  <div class="stat"><div class="n">r=−0.92</div><div class="t">相干 × 淹没频率（物理检验）</div></div>
+</div>
+
+<h2>一、研究立意：把潮汐失相干从"麻烦"反转为"信息"</h2>
+<p>潮滩沉积物粒度（D50 与砂/粉砂/黏土占比）是海岸冲淤演变与湿地演替研究的物质基础。
+光学遥感受云雨与潮位制约，C 波段 SAR 全天候成像，但时序分析的老大难是<b>潮汐淹没引起的失相干</b>——
+淹没抹平并重组滩面，前后两景复相干大幅下降。本研究把这一机制反转为信息源：
+<b>淹没频率受高程控制，高程又与粒度分带耦合</b>（高滩暴露粗化、低滩细化），
+因此时序相干系数本身就是粒度的指示器：模拟中高滩中位相干 0.798、低滩 0.469，相干与淹没频率 r=−0.921。
+相干（淹没历史）、极化（粗糙度）、TWI（地形）三者构成反演的物理三角。</p>
+
+<div class="flow">
+  <div class="step"><b>S1 GRD 时序</b><span>15 景 VV+VH<br>DN + 定标/噪声 LUT</span></div>
+  <div class="arrow">→</div>
+  <div class="step"><b>热噪声去除</b><span>NESZ 跨轨 LUT<br>功率域扣除</span></div>
+  <div class="arrow">→</div>
+  <div class="step"><b>辐射定标</b><span>σ⁰VV / σ⁰VH<br>跨轨 LUT</span></div>
+  <div class="arrow">→</div>
+  <div class="step"><b><span class="star">Lee Sigma ★</span></b><span>自实现 sigma 范围选点<br>ENL 4.3 → 8+</span></div>
+  <div class="arrow">→</div>
+  <div class="step"><b>地形校正</b><span>真实 SRTM DEM<br>局部入射角改正</span></div>
+  <div class="arrow">→</div>
+  <div class="step"><b><span class="star">时序相干 ★</span></b><span>VV 通道 105 景对<br>5×5 窗复相干估计</span></div>
+  <div class="arrow">→</div>
+  <div class="step"><b>GPR ∥ XGBoost</b><span>均值 + 后验 std<br>增益重要性对照</span></div>
+  <div class="arrow">→</div>
+  <div class="step"><b>反演图 / 不确定性</b><span>空间图带比例尺<br>指北针、图例</span></div>
+</div>
+
+<div class="note"><b>为什么用 GPR：</b>潮滩采样天然稀疏，模型必须回答"这个像元的预测有多可信"。
+GPR 是贝叶斯非参模型，天然输出逐点后验标准差——特征空间密集处预测紧致、外推区自动放大。
+本项目不确定性经校准检验：95% 置信覆盖率 93.3%（名义 95%），GPR 拟合出的 White 噪声项
+（0.0376）与采样观测误差设定（σ=4 μm）量级自洽；散点图中预测最差的样本恰被高 std 标记——
+不确定性图直接就是下一航次的采样建议图。</div>
+
+<h2>二、结果图（全部 300 dpi，空间图含图例/比例尺/指北针）</h2>
+
+<figure>
+  <img src="results/fig01_study_area.png" alt="研究区概况" loading="lazy">
+  <figcaption><b>图 1 · 研究区概况。</b>模拟真值 D50：黄河入海口（模拟河口）粗粒叶瓣向海凸出，
+  南北两侧细粒低滩，滩面淹没频率 0~0.49；150 个采样点（3 条垂直岸线剖面 51 点 + 滩面随机 99 点）。</figcaption>
+</figure>
+
+<figure>
+  <img src="results/fig02_gpr_inversion.png" alt="GPR 空间反演图" loading="lazy">
+  <figcaption><b>图 2 · GPR 空间反演图（D50）。</b>test R²=0.9109、RMSE=8.7386 μm；
+  忠实重现真值的河口粗源格局并带核方法固有的平滑性。</figcaption>
+</figure>
+
+<figure>
+  <img src="results/fig03_gpr_uncertainty.png" alt="GPR 不确定性分布图" loading="lazy">
+  <figcaption><b>图 3 · 预测不确定性分布图（逐像元后验标准差）。</b>高 σ 集中在河口粗-细过渡带
+  与南部滩面——正是特征空间采样稀疏的位置，与"主动学习补采样"思路直接衔接。</figcaption>
+</figure>
+
+<figure>
+  <img src="results/fig04_scatter.png" alt="散点拟合" loading="lazy">
+  <figcaption><b>图 4 · 散点拟合（留出测试集真实预测，n=30）。</b>左：GPR，颜色=预测 std——
+  最大残差点（实测 50 μm）恰被最高 std（黄色）标记，不确定性输出"知道自己不知道"；
+  右：XGBoost 对照，R²=0.8743、RMSE=10.38 μm，外推点偏差更大。</figcaption>
+</figure>
+
+<figure>
+  <img src="results/fig05_coherence.png" alt="时序相干系数图" loading="lazy">
+  <figcaption><b>图 5 · 时序平均相干系数图（VV 通道，15 景 105 景对）。</b>低滩黄-红失相干带
+  与淹没频率空间吻合；平滑泥滩相干受热噪声底压低（真实 S1 同样存在，报告 §5 讨论）。</figcaption>
+</figure>
+
+<figure>
+  <img src="results/fig06_pauli_rgb.png" alt="Pauli RGB 与 VV/VH" loading="lazy">
+  <figcaption><b>图 6 · Pauli RGB（R=|k1|² 面散射、G=|k2|² 二次、B=|k3|² 体散射）+ σ⁰VV + σ⁰VH。</b>
+  裸滩面以面散射主导，砂滩明亮、泥滩暗、水面最暗，对比结构清晰。</figcaption>
+</figure>
+
+<figure>
+  <img src="results/fig07_importance.png" alt="特征重要性与 GPR 核" loading="lazy">
+  <figcaption><b>图 7 · XGBoost 特征重要性（gain）与 GPR 拟合核。</b>pauli2（0.47）与 vh（0.34）主导
+  ——去极化类特征对粗糙度最敏感；GPR 核 1.77²·RBF(l=6.39)+White(0.0376)。</figcaption>
+</figure>
+
+<figure>
+  <img src="results/fig08_model_compare.png" alt="两模型空间反演对比" loading="lazy">
+  <figcaption><b>图 8 · GPR vs XGBoost 空间反演对比。</b>XGB 局部过拟合痕迹更明显
+  （滩面出现孤立斑块），GPR 平滑且带不确定性。</figcaption>
+</figure>
+
+<figure>
+  <img src="results/fig09_inundation.png" alt="潮汐淹没频率" loading="lazy">
+  <figcaption><b>图 9 · 潮汐淹没频率（模拟真值）。</b>失相干的物理驱动场：低滩深蓝高淹没频率带，
+  与图 5 低相干带空间对应。</figcaption>
+</figure>
+
+<h2>三、方法要点</h2>
+
+<h3>3.1 GRD 预处理链（对 L1 包真实执行，接口兼容真实 SAFE）</h3>
+<p>轨道校正（元数据校验占位，真实轨换 POD 精轨插值）→ 热噪声去除（功率域扣 NESZ 跨轨 LUT，
+远距条带可见去除前后 ~5 dB 差异）→ 辐射定标（σ⁰ = I·calib）→
+<b>Lee Sigma 斑点滤波自实现</b>（7×7 窗，斑点模型 I=L·R·Gamma(L,1/L)，sigma 范围 z=1.645 双侧 90%
+选窗内同类像元取均值；ENL 由暗端均质区稳健估计，滤波前 4.2~4.5 → 滤波后 8+，与 5×5 增强 Lee 对照择优）→
+地形校正（真实 SRTM 30m DEM 局部入射角面积改正）。</p>
+
+<h3>3.2 时序相干系数（特征核心）</h3>
+<p>对 15 景等效 SLC 复数据的全部 105 个景对，在 5×5 窗上估计复相干
+γ = |Σ s<sub>i</sub>s<sub>j</sub>*| / √(Σ|s<sub>i</sub>|²Σ|s<sub>j</sub>|²)，再对景对取时间平均。
+口径取 VV 主极化通道——平滑泥滩 VH 近噪声底（NESZ −25 dB），其相干被热噪声严重压低，
+仅作参考图。<b>诚实注记</b>：GRD 为强度数据无法直接估时序相干，真实数据轨应改用 SLC 对
+（或以强度相关替代），这是真实接入的主要方法学调整点。</p>
+
+<h3>3.3 GPR 不确定性量化</h3>
+<p>StandardScaler + ConstantKernel·RBF + WhiteKernel（normalize_y，n_restarts=4），
+80/20 固定种子划分 + 训练集 5 折 CV。后验给出逐点 μ 与 std；
+不确定性质量用三把尺子：95% 置信覆盖率 93.3%、|残差|~std Spearman +0.286（n=30 方向正确）、
+White 噪声项与观测误差自洽。全栅格 26.2 万像元分块预测产出反演图与不确定性图。</p>
+
+<h3>3.4 特征集与对照实验</h3>
+<p>9 维特征：σ⁰VV、σ⁰VH、VV/VH 比、Pauli 三分量 |k1|²|k2|²|k3|²、时序相干、入射角（31.5°–41°）、
+TWI（真实 SRTM + D8 单流向汇流）；与采样点做 3×3 窗均值匹配。特征-D50 相关：
+vh +0.850、pauli3 +0.848、vv/vh −0.823、pauli2 +0.816、<b>coherence +0.305</b>（与瞬时后向散射互补）。
+XGBoost（500 树 hist）对照：D50 上 GPR RMSE 低 16%，CV 折间波动更小——小样本光滑问题时核方法占优。</p>
+
+<h2>四、精度评估（唯一数字来源 results/metrics.json）</h2>
+<table>
+  <tr><th>目标</th><th>模型</th><th>R² (test)</th><th>RMSE (test)</th><th>R² (5 折 CV)</th></tr>
+  <tr class="hl"><td>D50 (μm)</td><td>GPR</td><td class="num">0.9109</td><td class="num">8.7386</td><td class="num">0.9324±0.0269</td></tr>
+  <tr><td>D50 (μm)</td><td>XGBoost</td><td class="num">0.8743</td><td class="num">10.3788</td><td class="num">0.9037±0.0360</td></tr>
+  <tr><td>砂占比</td><td>GPR / XGBoost</td><td class="num">0.9344 / 0.9257</td><td class="num">0.0969 / 0.1032</td><td class="num">0.9610 / 0.9435</td></tr>
+  <tr><td>粉砂占比</td><td>GPR / XGBoost</td><td class="num">0.9356 / 0.9285</td><td class="num">0.0733 / 0.0773</td><td class="num">0.9481 / 0.9398</td></tr>
+  <tr><td>黏土占比</td><td>GPR / XGBoost</td><td class="num">0.9177 / 0.8932</td><td class="num">0.0260 / 0.0296</td><td class="num">0.9125 / 0.8895</td></tr>
+  <tr><td>不确定性（D50）</td><td>GPR</td><td class="num" colspan="3">95% 覆盖率 0.9333；|残差|~std Spearman +0.286；std 中位 5.48 μm</td></tr>
+</table>
+<p style="font-size:13px;color:var(--soft)">数据双轨制：<b>主轨</b>为物理机制驱动的 Sentinel-1 时序模拟器
+（seed=20261104 逐位可复现：真值粒度场 8~106 μm 河口粗源+高滩粗化+低能细粒、潮位驱动的失相干机制、
+热噪声/斑点/量化全仿真）——带真值才能严格评估反演精度与不确定性校准；<b>真实数据轨</b>已完成
+CDSE OData 匿名场景清单（46 景 IW GRD，升轨）与真实 SRTM 30m DEM（4096 点，已用于 TWI 与地形校正），
+影像下载接入步骤见仓库 README。</p>
+
+<h2>五、优点与局限</h2>
+<ul>
+  <li><b>优点</b>：预处理链与相干估计全自实现可逐行讲解（不依赖 SNAP/pyroSAR）；GPR 不确定性经覆盖率校准；
+    带真值的受控实验让"特征物理性—精度—不确定性"三环节都可验证；误差来源七章式清单（潮汐失相干、
+    斑点、采样稀疏、尺度 mismatch、GRD 双极化 Pauli 局限、模拟-真实域差距、潮位相位抽样）。</li>
+  <li><b>局限</b>：主轨为模拟数据（设计使然，真实接入路径已备好）；失相干用干/湿二态权重近似；
+    GRD 双极化严格不出 Pauli（需 SLC 伪全极化重建）；TWI 用真实 DEM 与模拟地形不同源故信息量弱。</li>
+</ul>
+
+<div class="cta">
+  <a class="btn" href="https://github.com/dingdjfjs-star/s1-grain-size-gpr">GitHub 仓库（完整代码）</a>
+  <a class="btn ghost" href="report/项目报告.md">完整项目报告（六章）</a>
+  <a class="btn ghost" href="report/技术路线.drawio">技术路线 draw.io 源文件</a>
+  <a class="btn ghost" href="README.md">项目 README（真实数据接入）</a>
+</div>
+
+<footer>
+  Sentinel-1 Grain Size Inversion · Python + scikit-learn GPR + xgboost ·
+  热噪去除/定标/Lee Sigma/相干估计均为自研实现 · seed=20261104 逐位可复现 · 23 项测试全绿
+</footer>
+
+</div>
+</body>
+</html>

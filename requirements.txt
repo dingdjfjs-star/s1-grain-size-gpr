@@ -1,0 +1,10 @@
+# s1-grain-size-gpr 依赖（已在 E:\Ana Python 3.13.5 环境核验，2026-11-04）
+# 本项目不 pip 安装新包，此清单仅记录口径；cartopy 不可用（图件用 matplotlib 手绘制图要素）
+numpy>=2.0
+scipy>=1.14
+pandas>=2.2
+scikit-learn>=1.6
+rasterio>=1.5
+matplotlib>=3.9
+xgboost>=3.4.1
+geopandas>=1.0

@@ -1,0 +1,493 @@
+{
+  "bbox": [
+    118.95,
+    37.55,
+    119.45,
+    37.95
+  ],
+  "datetime": "2024-04-01 ~ 2024-09-28",
+  "note": "仅元数据清单；下载需注册 CDSE 账号并携带 token（见 README 真实数据接入）",
+  "sim_time_series_dates": [
+    "2024-04-01",
+    "2024-04-13",
+    "2024-04-25",
+    "2024-05-07",
+    "2024-05-19",
+    "2024-05-31",
+    "2024-06-12",
+    "2024-06-24",
+    "2024-07-06",
+    "2024-07-18",
+    "2024-07-30",
+    "2024-08-11",
+    "2024-08-23",
+    "2024-09-04",
+    "2024-09-16"
+  ],
+  "status": "ok",
+  "channel": "odata",
+  "reason": null,
+  "n_scenes": 46,
+  "scenes": [
+    {
+      "id": "c6764d02-ff69-40f3-9079-00de73a07e6a",
+      "product_name": "S1A_IW_GRDH_1SDV_20240408T100519_20240408T100544_053341_0677CA_9A85_COG.SAFE",
+      "datetime": "2024-04-08T10:05:19.016863Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1128.0,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(c6764d02-ff69-40f3-9079-00de73a07e6a)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "c8db7117-8cd3-45a3-acd2-50a0648255b1",
+      "product_name": "S1A_IW_GRDH_1SDV_20240408T100519_20240408T100544_053341_0677CA_AE16.SAFE",
+      "datetime": "2024-04-08T10:05:19.016863Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1720.7,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(c8db7117-8cd3-45a3-acd2-50a0648255b1)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "4cec962a-f27a-47af-ba59-8aeb2d1f7550",
+      "product_name": "S1A_IW_GRDH_1SDV_20240415T095651_20240415T095727_053443_067BC9_A13A.SAFE",
+      "datetime": "2024-04-15T09:56:51.411083Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 2446.3,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(4cec962a-f27a-47af-ba59-8aeb2d1f7550)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "cf88374c-5170-4567-8803-bdfbf2cdccdb",
+      "product_name": "S1A_IW_GRDH_1SDV_20240415T095651_20240415T095727_053443_067BC9_D1C5_COG.SAFE",
+      "datetime": "2024-04-15T09:56:51.411083Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1507.7,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(cf88374c-5170-4567-8803-bdfbf2cdccdb)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "b7988f80-0bd5-4107-9bbd-9e18b695ed60",
+      "product_name": "S1A_IW_GRDH_1SDV_20240420T100519_20240420T100544_053516_067EB1_2F8B_COG.SAFE",
+      "datetime": "2024-04-20T10:05:19.308048Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1091.3,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(b7988f80-0bd5-4107-9bbd-9e18b695ed60)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "c68189f0-c238-4b08-9bea-c12a6bdc302e",
+      "product_name": "S1A_IW_GRDH_1SDV_20240420T100519_20240420T100544_053516_067EB1_2767.SAFE",
+      "datetime": "2024-04-20T10:05:19.308048Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1720.6,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(c68189f0-c238-4b08-9bea-c12a6bdc302e)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "328bc4a0-9122-4d1a-b3ba-0368f60c769b",
+      "product_name": "S1A_IW_GRDH_1SDV_20240427T095652_20240427T095728_053618_0682A9_6AD4.SAFE",
+      "datetime": "2024-04-27T09:56:52.286418Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 2444.7,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(328bc4a0-9122-4d1a-b3ba-0368f60c769b)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "6a249a9b-8edf-42d0-97d2-ca94dde72818",
+      "product_name": "S1A_IW_GRDH_1SDV_20240427T095652_20240427T095728_053618_0682A9_CC94_COG.SAFE",
+      "datetime": "2024-04-27T09:56:52.286418Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1499.4,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(6a249a9b-8edf-42d0-97d2-ca94dde72818)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "53757ddf-f45e-4466-beef-b841a3277ff7",
+      "product_name": "S1A_IW_GRDH_1SDV_20240521T095716_20240521T095741_053968_068F75_40C0.SAFE",
+      "datetime": "2024-05-21T09:57:16.773593Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1715.6,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(53757ddf-f45e-4466-beef-b841a3277ff7)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "6036fc9c-372e-4a16-a6ba-b63afa0d7535",
+      "product_name": "S1A_IW_GRDH_1SDV_20240521T095716_20240521T095741_053968_068F75_4B08_COG.SAFE",
+      "datetime": "2024-05-21T09:57:16.773593Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 952.2,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(6036fc9c-372e-4a16-a6ba-b63afa0d7535)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "2c904764-c5fb-4554-8594-a3eda2c0137e",
+      "product_name": "S1A_IW_GRDH_1SDV_20240526T100519_20240526T100544_054041_069205_B385.SAFE",
+      "datetime": "2024-05-26T10:05:19.492650Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1727.8,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(2c904764-c5fb-4554-8594-a3eda2c0137e)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "ff5190b8-2652-466f-98fe-26e8c2f56342",
+      "product_name": "S1A_IW_GRDH_1SDV_20240526T100519_20240526T100544_054041_069205_B100_COG.SAFE",
+      "datetime": "2024-05-26T10:05:19.492650Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1099.3,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(ff5190b8-2652-466f-98fe-26e8c2f56342)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "509d1f19-398c-46a5-a139-e2d084db11e3",
+      "product_name": "S1A_IW_GRDH_1SDV_20240602T095716_20240602T095741_054143_069586_71B3_COG.SAFE",
+      "datetime": "2024-06-02T09:57:16.885648Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 895.7,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(509d1f19-398c-46a5-a139-e2d084db11e3)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "a57b9706-4042-4c61-97f4-63bfe5885d6d",
+      "product_name": "S1A_IW_GRDH_1SDV_20240602T095716_20240602T095741_054143_069586_C469.SAFE",
+      "datetime": "2024-06-02T09:57:16.885648Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1715.6,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(a57b9706-4042-4c61-97f4-63bfe5885d6d)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "6198653b-ad73-475e-a89d-e512c68a3dfc",
+      "product_name": "S1A_IW_GRDH_1SDV_20240607T100518_20240607T100543_054216_069814_CCB2.SAFE",
+      "datetime": "2024-06-07T10:05:18.761915Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1720.7,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(6198653b-ad73-475e-a89d-e512c68a3dfc)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "c20a938b-9d73-4716-9503-11df5f274395",
+      "product_name": "S1A_IW_GRDH_1SDV_20240607T100518_20240607T100543_054216_069814_1FD4_COG.SAFE",
+      "datetime": "2024-06-07T10:05:18.761915Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1104.3,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(c20a938b-9d73-4716-9503-11df5f274395)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "02dc900b-55ab-4a75-ad52-1c5bada5f1f3",
+      "product_name": "S1A_IW_GRDH_1SDV_20240619T100518_20240619T100543_054391_069E21_D226_COG.SAFE",
+      "datetime": "2024-06-19T10:05:18.350775Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1103.1,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(02dc900b-55ab-4a75-ad52-1c5bada5f1f3)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "a32ee45e-fcd3-4471-b396-6c6f89d15c48",
+      "product_name": "S1A_IW_GRDH_1SDV_20240619T100518_20240619T100543_054391_069E21_B0CB.SAFE",
+      "datetime": "2024-06-19T10:05:18.350775Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1727.8,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(a32ee45e-fcd3-4471-b396-6c6f89d15c48)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "4564c5a6-037f-4172-8cda-60086aca8c19",
+      "product_name": "S1A_IW_GRDH_1SDV_20240701T100517_20240701T100542_054566_06A43B_9583_COG.SAFE",
+      "datetime": "2024-07-01T10:05:17.654023Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1140.4,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(4564c5a6-037f-4172-8cda-60086aca8c19)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "7cbc2ea5-85db-434d-a8fa-a95a0e0bc2ed",
+      "product_name": "S1A_IW_GRDH_1SDV_20240701T100517_20240701T100542_054566_06A43B_E163.SAFE",
+      "datetime": "2024-07-01T10:05:17.654023Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1727.9,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(7cbc2ea5-85db-434d-a8fa-a95a0e0bc2ed)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "52913367-b842-443f-9785-5bf33e6d9675",
+      "product_name": "S1A_IW_GRDH_1SDV_20240713T100517_20240713T100542_054741_06AA4A_DCF6_COG.SAFE",
+      "datetime": "2024-07-13T10:05:17.327454Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1120.2,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(52913367-b842-443f-9785-5bf33e6d9675)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "6177f9e0-b7a0-4891-a0f2-da153dc81d82",
+      "product_name": "S1A_IW_GRDH_1SDV_20240713T100517_20240713T100542_054741_06AA4A_8E28.SAFE",
+      "datetime": "2024-07-13T10:05:17.327454Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1728.0,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(6177f9e0-b7a0-4891-a0f2-da153dc81d82)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "3dcd4fc5-9e01-46ff-82ab-f7ee6e24624e",
+      "product_name": "S1A_IW_GRDH_1SDV_20240720T095649_20240720T095725_054843_06ADCD_F386_COG.SAFE",
+      "datetime": "2024-07-20T09:56:49.691387Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1559.1,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(3dcd4fc5-9e01-46ff-82ab-f7ee6e24624e)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "cfa9ccd5-c517-4ec1-91ea-2fcd252b6926",
+      "product_name": "S1A_IW_GRDH_1SDV_20240720T095649_20240720T095725_054843_06ADCD_0974.SAFE",
+      "datetime": "2024-07-20T09:56:49.691387Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 2445.6,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(cfa9ccd5-c517-4ec1-91ea-2fcd252b6926)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "869d1a43-7abb-4dbb-97d4-526a42409233",
+      "product_name": "S1A_IW_GRDH_1SDV_20240725T100516_20240725T100541_054916_06B064_861C_COG.SAFE",
+      "datetime": "2024-07-25T10:05:16.817366Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1135.7,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(869d1a43-7abb-4dbb-97d4-526a42409233)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "8a935cff-308c-4c2b-85ce-978091c083a5",
+      "product_name": "S1A_IW_GRDH_1SDV_20240725T100516_20240725T100541_054916_06B064_EC34.SAFE",
+      "datetime": "2024-07-25T10:05:16.817366Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1728.0,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(8a935cff-308c-4c2b-85ce-978091c083a5)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "4f2ebce6-40e3-48dc-823e-cc583a84d749",
+      "product_name": "S1A_IW_GRDH_1SDV_20240806T100516_20240806T100541_055091_06B672_47E4_COG.SAFE",
+      "datetime": "2024-08-06T10:05:16.951433Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1112.8,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(4f2ebce6-40e3-48dc-823e-cc583a84d749)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "89d5e88f-877c-43f0-8088-6f9cf5d6c1bd",
+      "product_name": "S1A_IW_GRDH_1SDV_20240806T100516_20240806T100541_055091_06B672_7C21.SAFE",
+      "datetime": "2024-08-06T10:05:16.951433Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1728.0,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(89d5e88f-877c-43f0-8088-6f9cf5d6c1bd)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "26450cf6-3191-4365-99a4-751c46e15a6e",
+      "product_name": "S1A_IW_GRDH_1SDV_20240813T095714_20240813T095739_055193_06BA22_887F_COG.SAFE",
+      "datetime": "2024-08-13T09:57:14.400810Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 961.2,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(26450cf6-3191-4365-99a4-751c46e15a6e)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "8b0bda6c-6994-4321-b35a-76a351dd8b38",
+      "product_name": "S1A_IW_GRDH_1SDV_20240813T095714_20240813T095739_055193_06BA22_9930_COG.SAFE",
+      "datetime": "2024-08-13T09:57:14.400810Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 961.2,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(8b0bda6c-6994-4321-b35a-76a351dd8b38)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "eec1eabd-c748-4440-be1f-82abd04c3c6f",
+      "product_name": "S1A_IW_GRDH_1SDV_20240813T095714_20240813T095739_055193_06BA22_1519.SAFE",
+      "datetime": "2024-08-13T09:57:14.400810Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1715.6,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(eec1eabd-c748-4440-be1f-82abd04c3c6f)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "0e1a948a-d22f-401d-bf7b-844dc2b2ea21",
+      "product_name": "S1A_IW_GRDH_1SDV_20240818T100517_20240818T100542_055266_06BCCE_7661_COG.SAFE",
+      "datetime": "2024-08-18T10:05:17.178114Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1121.6,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(0e1a948a-d22f-401d-bf7b-844dc2b2ea21)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "96284b28-65de-4e01-b12d-9e3a11924f9d",
+      "product_name": "S1A_IW_GRDH_1SDV_20240818T100517_20240818T100542_055266_06BCCE_2BDA_COG.SAFE",
+      "datetime": "2024-08-18T10:05:17.178114Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1121.6,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(96284b28-65de-4e01-b12d-9e3a11924f9d)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "b2d2ce34-f8b4-4fb2-80ad-95179c802b11",
+      "product_name": "S1A_IW_GRDH_1SDV_20240818T100517_20240818T100542_055266_06BCCE_9253.SAFE",
+      "datetime": "2024-08-18T10:05:17.178114Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1728.0,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(b2d2ce34-f8b4-4fb2-80ad-95179c802b11)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "0f72cfc2-54e9-49a1-aad9-ee6fd62b80a9",
+      "product_name": "S1A_IW_GRDH_1SDV_20240825T095715_20240825T095740_055368_06C0A2_78B3.SAFE",
+      "datetime": "2024-08-25T09:57:15.005678Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1715.7,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(0f72cfc2-54e9-49a1-aad9-ee6fd62b80a9)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "e2164947-174e-4b17-8460-bac6ff596919",
+      "product_name": "S1A_IW_GRDH_1SDV_20240825T095715_20240825T095740_055368_06C0A2_9A11_COG.SAFE",
+      "datetime": "2024-08-25T09:57:15.005678Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 920.1,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(e2164947-174e-4b17-8460-bac6ff596919)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "6dce3688-f74d-4eed-b292-f13ed2753265",
+      "product_name": "S1A_IW_GRDH_1SDV_20240830T100517_20240830T100542_055441_06C348_D78A.SAFE",
+      "datetime": "2024-08-30T10:05:17.199153Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1728.0,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(6dce3688-f74d-4eed-b292-f13ed2753265)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "8281f27e-532b-4a1e-a669-b6f882ae1788",
+      "product_name": "S1A_IW_GRDH_1SDV_20240830T100517_20240830T100542_055441_06C348_46A8_COG.SAFE",
+      "datetime": "2024-08-30T10:05:17.199153Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1105.2,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(8281f27e-532b-4a1e-a669-b6f882ae1788)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "7c24074b-36eb-4a1e-b303-21d76c21783d",
+      "product_name": "S1A_IW_GRDH_1SDV_20240906T095715_20240906T095740_055543_06C733_938F.SAFE",
+      "datetime": "2024-09-06T09:57:15.174725Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1715.8,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(7c24074b-36eb-4a1e-b303-21d76c21783d)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "ecbc80e8-8955-40e0-8966-d4bbdf40aeb3",
+      "product_name": "S1A_IW_GRDH_1SDV_20240906T095715_20240906T095740_055543_06C733_E339_COG.SAFE",
+      "datetime": "2024-09-06T09:57:15.174725Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 908.2,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(ecbc80e8-8955-40e0-8966-d4bbdf40aeb3)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "2e158140-404e-47f2-8c7c-4e670229872e",
+      "product_name": "S1A_IW_GRDH_1SDV_20240911T100517_20240911T100542_055616_06CA1F_D7E2.SAFE",
+      "datetime": "2024-09-11T10:05:17.419609Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1728.0,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(2e158140-404e-47f2-8c7c-4e670229872e)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "8479a792-6530-481a-bf4c-9cbe788d90ed",
+      "product_name": "S1A_IW_GRDH_1SDV_20240911T100517_20240911T100542_055616_06CA1F_E2CE_COG.SAFE",
+      "datetime": "2024-09-11T10:05:17.419609Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1137.5,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(8479a792-6530-481a-bf4c-9cbe788d90ed)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "5491d750-78d8-4ac6-882d-bb0ac5c82150",
+      "product_name": "S1A_IW_GRDH_1SDV_20240918T095650_20240918T095726_055718_06CE1E_D8B3.SAFE",
+      "datetime": "2024-09-18T09:56:50.805847Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 2446.2,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(5491d750-78d8-4ac6-882d-bb0ac5c82150)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "fdd1da48-006a-4919-ba93-4b0e85e66a9e",
+      "product_name": "S1A_IW_GRDH_1SDV_20240918T095650_20240918T095726_055718_06CE1E_E462_COG.SAFE",
+      "datetime": "2024-09-18T09:56:50.805847Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 171,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1519.5,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(fdd1da48-006a-4919-ba93-4b0e85e66a9e)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "78096e94-7200-4417-a76f-0d85540339ee",
+      "product_name": "S1A_IW_GRDH_1SDV_20240923T100518_20240923T100543_055791_06D106_D504_COG.SAFE",
+      "datetime": "2024-09-23T10:05:18.015918Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1093.6,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(78096e94-7200-4417-a76f-0d85540339ee)/$value  —— 需 CDSE 账号 token"
+    },
+    {
+      "id": "c751d728-4e2e-4fdd-9b6c-601a8cf6b1f3",
+      "product_name": "S1A_IW_GRDH_1SDV_20240923T100518_20240923T100543_055791_06D106_084C.SAFE",
+      "datetime": "2024-09-23T10:05:18.015918Z",
+      "orbit_direction": "ASCENDING",
+      "relative_orbit": 69,
+      "polarization_mode": "VV+VH",
+      "size_mb": 1728.0,
+      "download_api": "https://catalogue.dataspace.copernicus.eu/odata/v1/Products(c751d728-4e2e-4fdd-9b6c-601a8cf6b1f3)/$value  —— 需 CDSE 账号 token"
+    }
+  ]
+}

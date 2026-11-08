@@ -1,0 +1,14 @@
+{
+  "coh_high_flat": 0.798,
+  "coh_low_flat": 0.469,
+  "vv_high": -4.74,
+  "vv_low": -9.95,
+  "twi_range": [
+    9.41,
+    18.17
+  ],
+  "incidence_range": [
+    31.5,
+    41.0
+  ]
+}

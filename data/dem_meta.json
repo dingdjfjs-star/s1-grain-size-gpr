@@ -1,0 +1,8 @@
+{
+  "source": "opentopodata srtm30m",
+  "n_grid": 64,
+  "posting_deg": 0.007936507936507936,
+  "note": "约 700 m 间隔抽样后上采样使用；海洋区 SRTM 记 0 m",
+  "elev_min_m": -9.0,
+  "elev_max_m": 8.0
+}
